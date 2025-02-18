@@ -1,0 +1,15 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+Rayfield:Notify({
+   Title = "DebugNotifTest",
+   Content = "Notification Content",
+   Duration = 99,
+   Image = "folder-input",
+})
+
+for _, v in pairs(game:GetDescendants()) do
+	if v:IsA("TextLabel") and v.Text == "DebugNotifTest" then
+		saveinstance(v:FindFirstAncestorOfClass("ScreenGui"))
+  return
+	end
+end
